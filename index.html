@@ -1,0 +1,79 @@
+
+<head>
+  <title>News Summarizer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+
+
+<body>
+
+<h1 class="center">Percent Error Calculator</h1>
+
+
+<P class="center">
+<input type="text" id="aValue" placeholder="Accepted Value ex. 10">
+<button class="btn btn-primary" id='go' value="budget" type="button" onclick="getError()" >Go!</button>
+<input type="text" id="eValue" placeholder="Experimental Value ex. 7"></p>
+
+
+<h2 class="center" id="answer"></h2>
+
+</body>
+
+
+
+<style>
+.center {
+	text-align: center;
+}
+
+h3 {
+	padding: 60px;
+}
+#aValue {
+	margin-right: 10%;
+}
+
+#eValue {
+	margin-left: 10%;
+}
+
+body {
+	background-color: #111558;
+	color: white;
+}
+
+</style>
+
+
+
+
+<script>
+ $('#go').click(getError);
+
+function getError() {
+
+	var accepted = ($('#aValue').val());
+	
+	var experimental = ($('#eValue').val()) 
+	
+	var topHalf = Math.abs(experimental - accepted);
+
+	var toBeMultiplied = topHalf / accepted;
+
+	var answer = (toBeMultiplied * 100).toFixed(2);
+	
+	console.log(answer);
+	if(isNaN(answer)) {
+			($('#answer')[0].innerHTML = "Please enter a number!");
+	} else {	
+	($('#answer')[0].innerHTML = answer + "% error");
+	}
+}
+
+
+
+
+</script>
