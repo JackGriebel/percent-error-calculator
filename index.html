@@ -1,6 +1,6 @@
 
 <head>
-  <title>News Summarizer</title>
+  <title>Percent Error Calculator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
@@ -63,13 +63,14 @@ function getError() {
 
 	var toBeMultiplied = topHalf / accepted;
 
-	var answer = (toBeMultiplied * 100).toFixed(2);
+	var answer = ((toBeMultiplied * 100).toFixed(2));
 	
-	console.log(answer);
+	
+	
 	if(isNaN(answer)) {
-			($('#answer')[0].innerHTML = "Please enter a number!");
+		($('#answer')[0].innerHTML = "Please enter a number!");
 	} else {	
-	($('#answer')[0].innerHTML = answer + "% error");
+		($('#answer')[0].innerHTML = answer + "% error");
 	}
 }
 
